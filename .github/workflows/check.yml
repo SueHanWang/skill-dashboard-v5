@@ -4,5 +4,9 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
-      - run: node --check data.js
+      - name: 檢出專案程式碼
+        uses: actions/checkout@v7
+      - name: 檢查 data.js 語法
+        run: node --check data.js
+      - name: 檢查 data.js 資料結構
+        run: node check-data.js
